@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lista_alimentos_equi_app/app/pages/home_page.dart';
+import 'package:lista_alimentos_equi_app/app/testes/circular_menu_teste.dart';
 import 'package:lista_alimentos_equi_app/app/testes/fluent_appbar_teste.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: FluentAppBarTeste(),
+      home: CircularMenuTeste(),
     );
   }
 }
