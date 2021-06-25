@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lista_alimentos_equi_app/app/widgets/custom_circular_menu.dart';
 
 SliverAppBar customAppBar(
-    BuildContext context, String subtitle, String description) {
+    BuildContext context) {
   return SliverAppBar(
-      leading: IconButton(
-          icon: FaIcon(FontAwesomeIcons.infoCircle),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          }),
+      leading: customCircularMenu(),
       snap: false,
       pinned: false,
       expandedHeight: 200.0,
       centerTitle: true,
       elevation: 5,
       titleSpacing: 100,
-      flexibleSpace: customFlexiveSpaceBar(context, subtitle, description));
+      flexibleSpace: customFlexiveSpaceBar(context));
 }
 
 customFlexiveSpaceBar(
-    BuildContext context, String subtitle, String description) {
-  var tt = Theme.of(context).textTheme;
+    BuildContext context) {
   return FlexibleSpaceBar(
     stretchModes: <StretchMode>[
       StretchMode.zoomBackground,
@@ -33,24 +28,19 @@ customFlexiveSpaceBar(
       text: TextSpan(
         children: [
           TextSpan(
-            text: "   Economia Agora\n\n\n",
-            style: tt.headline6.copyWith(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+            text: "MANUAL FOTOGRÁFICO\n",
           ),
           TextSpan(
-              text: subtitle,
-              style: tt.headline6.copyWith(fontSize: 16, color: Colors.white)),
-          TextSpan(
-              text: '\n$description',
-              style: tt.headline6.copyWith(fontSize: 12)),
-        ],
+            text: "De porções alimentares da lista de substituições de alimentos equivalentes",
+          ),
+         ],
       ),
     ),
     background: Stack(
       fit: StackFit.expand,
       children: [
         Image.asset(
-          "assets/imgappbar.jpg",
+          "assets/img_app_bar.jpg",
           fit: BoxFit.fill,
         ),
         const DecoratedBox(
